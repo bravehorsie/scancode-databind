@@ -1,17 +1,15 @@
 package com.oracle.scancodedatabind.pojo;
 
+import javax.json.bind.annotation.JsonbProperty;
+
 public class FileLicense {
 
     private String key;
     private Double score;
     private String short_name;
-    /*private String category;
     private String owner;
-    private String homepage_url;
-    private String text_url;
-    private String reference_url;
-    private String spdx_license_key;
-    private String spdx_url;*/
+    @JsonbProperty("homepage_url")
+    private String url;
 
     public String getKey() {
         return key;
@@ -35,5 +33,21 @@ public class FileLicense {
 
     public void setShort_name(String short_name) {
         this.short_name = short_name;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

@@ -6,7 +6,7 @@ Transform output of scancode tool into csv files.
 
 ```java -jar target/scancode-databind-1.0-SNAPSHOT-jar-with-dependencies.jar ~/path/to/jsoninput.json ~/path/to/outputfile```
 
-Output will actually be two files with suffixes -with-license.csv and -without-license.csv
+Output will actually be files with suffixes -known-license.csv, -unknown-license.csv and -without-license.csv
 
 You have to run scancode with -i option if you want to exclude directories from the output files.
 

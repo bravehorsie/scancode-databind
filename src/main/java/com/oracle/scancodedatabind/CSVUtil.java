@@ -18,6 +18,9 @@ public class CSVUtil {
 
     //https://tools.ietf.org/html/rfc4180
     private static String followCVSformat(String value) {
+        if (value == null) {
+            return value;
+        }
 
         String result = value;
         if (result.contains("\"")) {
@@ -39,6 +42,9 @@ public class CSVUtil {
 
         StringBuilder sb = new StringBuilder();
         for (String value : values) {
+            if (value == null) {
+                continue;
+            }
             if (!first) {
                 sb.append(separators);
             }

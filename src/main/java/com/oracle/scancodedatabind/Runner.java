@@ -1,11 +1,15 @@
 package com.oracle.scancodedatabind;
 
 import com.oracle.scancodedatabind.pojo.FileEntry;
+import com.oracle.scancodedatabind.pojo.FileLicense;
 import com.oracle.scancodedatabind.pojo.ScancodeResult;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,6 +19,8 @@ public class Runner {
     private final String jsonFilePath;
 
     private final String outputPath;
+
+    private final String[] known = new String[] {"GPL 2.0 with classpath exception", "CDDL 1.1"};
 
     public Runner(String jsonFilePath, String outputPath) {
         this.jsonFilePath = jsonFilePath;
@@ -41,18 +47,36 @@ public class Runner {
         List<FileEntry> files = result.getFiles().stream().filter(fileEntry -> fileEntry.getType().equals("file"))
                 .collect(Collectors.toList());
 
+
+
         List<FileEntry> withLicense = files.stream().filter(fileEntry ->
                 fileEntry.getLicenses() != null && fileEntry.getLicenses().size() > 0)
                 .collect(Collectors.toList());
+
+
+        List<FileEntry> knownLicnses = new ArrayList<>();
+        List<FileEntry> exceptions = new ArrayList<>();
+
+        withLicense.forEach(fileEntry -> {
+            for (FileLicense license : fileEntry.getLicenses()) {
+                if (!license.getShort_name().equals(known[0]) && !license.getShort_name().equals(known[1])) {
+                    exceptions.add(fileEntry);
+                    return;
+                }
+            }
+            knownLicnses.add(fileEntry);
+        });
 
         List<FileEntry> withoutLicense = files.stream().filter(fileEntry ->
                 fileEntry.getLicenses() == null || fileEntry.getLicenses().size() == 0)
                 .collect(Collectors.toList());
 
-        System.out.println("Entries with license: " + withLicense.size());
+        System.out.println("Entries with known license: " + knownLicnses.size());
+        System.out.println("Entries with unknown license: " + exceptions.size());
         System.out.println("Entries without license: " + withoutLicense.size());
 
-        printCsv(withLicense, outputPath + "-with-license.csv");
+        printCsv(knownLicnses, outputPath + "-known-license.csv");
+        printCsv(exceptions, outputPath + "-exception-license.csv");
         printCsv(withoutLicense, outputPath + "-without-license.csv");
 
     }
@@ -62,11 +86,13 @@ public class Runner {
         try (FileWriter outWriter = new FileWriter(output)) {
             entries.forEach((fileEntry -> {
                 List<String> values = new ArrayList<>();
-                values.add(fileEntry.getPath());
+                values.add("File: " + fileEntry.getPath());
 
-                StringBuilder licenseBuilder = new StringBuilder();
-                fileEntry.getLicenses().forEach((fileLicense -> licenseBuilder.append(fileLicense.getShort_name()).append(", ")));
-                values.add(licenseBuilder.toString());
+                fileEntry.getLicenses().forEach((fileLicense -> {
+                    values.add("License: " + fileLicense.getShort_name());
+                    values.add("Owner: " + fileLicense.getOwner());
+                    values.add("Url: " + fileLicense.getUrl());
+                }));
                 try {
                     CSVUtil.writeLine(outWriter, values);
                 } catch (IOException e) {
