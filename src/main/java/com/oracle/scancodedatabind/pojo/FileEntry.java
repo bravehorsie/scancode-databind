@@ -1,6 +1,7 @@
 package com.oracle.scancodedatabind.pojo;
 
-import java.util.List;
+import javax.json.bind.annotation.JsonbProperty;
+import java.util.Set;
 
 /**
  * File in Scancode result.
@@ -12,6 +13,31 @@ public class FileEntry {
 
     private String type;
 
+    @JsonbProperty("file_type")
+    private String mimeType;
+
+    private Boolean binary;
+
+    private Set<FileLicense> licenses;
+
+    private Set<FileCopyright> copyrights;
+
+    public Set<FileCopyright> getCopyrights() {
+        return copyrights;
+    }
+
+    public void setCopyrights(Set<FileCopyright> copyrights) {
+        this.copyrights = copyrights;
+    }
+
+    public Boolean getBinary() {
+        return binary;
+    }
+
+    public void setBinary(Boolean binary) {
+        this.binary = binary;
+    }
+
     public String getType() {
         return type;
     }
@@ -19,8 +45,6 @@ public class FileEntry {
     public void setType(String type) {
         this.type = type;
     }
-
-    private List<FileLicense> licenses;
 
     public String getPath() {
         return path;
@@ -30,11 +54,19 @@ public class FileEntry {
         this.path = path;
     }
 
-    public List<FileLicense> getLicenses() {
+    public Set<FileLicense> getLicenses() {
         return licenses;
     }
 
-    public void setLicenses(List<FileLicense> licenses) {
+    public void setLicenses(Set<FileLicense> licenses) {
         this.licenses = licenses;
+    }
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
     }
 }

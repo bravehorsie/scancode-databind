@@ -93,6 +93,14 @@ public class Runner {
                     values.add("Owner: " + fileLicense.getOwner());
                     values.add("Url: " + fileLicense.getUrl());
                 }));
+
+                fileEntry.getCopyrights().forEach(fileCopyright -> {
+                    if (fileCopyright.getStatements().size() > 0 || fileCopyright.getHolders().size() > 0) {
+                        values.add("Copyrights: " + fileCopyright.getStatements());
+                        values.add("Holders: " + fileCopyright.getHolders());
+                    }
+                });
+
                 try {
                     CSVUtil.writeLine(outWriter, values);
                 } catch (IOException e) {

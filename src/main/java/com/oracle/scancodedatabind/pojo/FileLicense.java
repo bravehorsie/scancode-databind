@@ -50,4 +50,26 @@ public class FileLicense {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        FileLicense license = (FileLicense) o;
+
+        if (key != null ? !key.equals(license.key) : license.key != null) return false;
+        if (short_name != null ? !short_name.equals(license.short_name) : license.short_name != null) return false;
+        if (owner != null ? !owner.equals(license.owner) : license.owner != null) return false;
+        return url != null ? url.equals(license.url) : license.url == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = key != null ? key.hashCode() : 0;
+        result = 31 * result + (short_name != null ? short_name.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (url != null ? url.hashCode() : 0);
+        return result;
+    }
 }
