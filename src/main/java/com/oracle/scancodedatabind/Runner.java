@@ -50,7 +50,7 @@ public class Runner {
 
 
         List<FileEntry> withLicense = files.stream().filter(fileEntry ->
-                fileEntry.getLicenses() != null && fileEntry.getLicenses().size() > 0)
+                fileEntry.getLicenses().size() > 0)
                 .collect(Collectors.toList());
 
 

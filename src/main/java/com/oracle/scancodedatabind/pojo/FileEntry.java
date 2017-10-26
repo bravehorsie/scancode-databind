@@ -1,6 +1,7 @@
 package com.oracle.scancodedatabind.pojo;
 
 import javax.json.bind.annotation.JsonbProperty;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -18,9 +19,9 @@ public class FileEntry {
 
     private Boolean binary;
 
-    private Set<FileLicense> licenses;
+    private Set<FileLicense> licenses = new HashSet<>();
 
-    private Set<FileCopyright> copyrights;
+    private Set<FileCopyright> copyrights = new HashSet<>();
 
     public Set<FileCopyright> getCopyrights() {
         return copyrights;
