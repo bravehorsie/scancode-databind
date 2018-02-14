@@ -1,6 +1,7 @@
 package com.oracle.scancodedatabind.pojo;
 
 import javax.json.bind.annotation.JsonbProperty;
+import java.util.Objects;
 
 public class FileLicense {
 
@@ -10,6 +11,16 @@ public class FileLicense {
     private String owner;
     @JsonbProperty("homepage_url")
     private String url;
+
+    @JsonbProperty("matched_text")
+    private String matchedText;
+
+    @JsonbProperty("start_line")
+    private String startLine;
+
+    @JsonbProperty("end_line")
+    private String endLine;
+
 
     public String getKey() {
         return key;
@@ -51,25 +62,44 @@ public class FileLicense {
         this.url = url;
     }
 
+    public String getMatchedText() {
+        return matchedText;
+    }
+
+    public void setMatchedText(String matchedText) {
+        this.matchedText = matchedText;
+    }
+
+    public String getStartLine() {
+        return startLine;
+    }
+
+    public void setStartLine(String startLine) {
+        this.startLine = startLine;
+    }
+
+    public String getEndLine() {
+        return endLine;
+    }
+
+    public void setEndLine(String endLine) {
+        this.endLine = endLine;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
-        FileLicense license = (FileLicense) o;
-
-        if (key != null ? !key.equals(license.key) : license.key != null) return false;
-        if (short_name != null ? !short_name.equals(license.short_name) : license.short_name != null) return false;
-        if (owner != null ? !owner.equals(license.owner) : license.owner != null) return false;
-        return url != null ? url.equals(license.url) : license.url == null;
+        FileLicense that = (FileLicense) o;
+        return Objects.equals(key, that.key) &&
+                Objects.equals(short_name, that.short_name) &&
+                Objects.equals(owner, that.owner) &&
+                Objects.equals(url, that.url) &&
+                Objects.equals(matchedText, that.matchedText);
     }
 
     @Override
     public int hashCode() {
-        int result = key != null ? key.hashCode() : 0;
-        result = 31 * result + (short_name != null ? short_name.hashCode() : 0);
-        result = 31 * result + (owner != null ? owner.hashCode() : 0);
-        result = 31 * result + (url != null ? url.hashCode() : 0);
-        return result;
+        return Objects.hash(key, short_name, owner, url, matchedText);
     }
 }

@@ -1,7 +1,10 @@
 package com.oracle.scancodedatabind.pojo;
 
 import javax.json.bind.annotation.JsonbProperty;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -19,7 +22,9 @@ public class FileEntry {
 
     private Boolean binary;
 
-    private Set<FileLicense> licenses = new HashSet<>();
+    private List<FileLicense> licenses;
+
+    private Map<FileLicenseKey, FileLicense> highestScoreLicenses = new HashMap<>();
 
     private Set<FileCopyright> copyrights = new HashSet<>();
 
@@ -55,12 +60,12 @@ public class FileEntry {
         this.path = path;
     }
 
-    public Set<FileLicense> getLicenses() {
-        return licenses;
+    public Map<FileLicenseKey, FileLicense> getHighestScoreLicenses() {
+        return highestScoreLicenses;
     }
 
-    public void setLicenses(Set<FileLicense> licenses) {
-        this.licenses = licenses;
+    public void setHighestScoreLicenses(Map<FileLicenseKey, FileLicense> highestScoreLicenses) {
+        this.highestScoreLicenses = highestScoreLicenses;
     }
 
     public String getMimeType() {
@@ -69,5 +74,13 @@ public class FileEntry {
 
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
+    }
+
+    public List<FileLicense> getLicenses() {
+        return licenses;
+    }
+
+    public void setLicenses(List<FileLicense> licenses) {
+        this.licenses = licenses;
     }
 }

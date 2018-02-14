@@ -1,25 +1,289 @@
-{
-  "path": "spider/install/jaxws/docs/sgml/figures/serverpath-threeway.eps",
-  "type": "file",
-  "name": "serverpath-threeway.eps",
-  "base_name": "serverpath-threeway",
-  "extension": ".eps",
-  "date": "2017-10-16",
-  "size": 1530187,
-  "sha1": "324f9abfc4c02e0166c2441236a41eea557a48e7",
-  "md5": "826051fe743fe5e9de9e5a8e60ab9f73",
-  "files_count": null,
-  "mime_type": "application/octet-stream",
-  "file_type": "DOS EPS Binary File Postscript starts at byte 32 length 1447444 TIFF starts at byte 1447476 length 82711",
-  "programming_language": null,
-  "is_binary": true,
-  "is_text": false,
-  "is_archive": false,
-  "is_media": false,
-  "is_source": false,
-  "is_script": false,
-  "scan_errors": [
-    "ERROR: Processing interrupted: timeout after 720 seconds."
+[{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_version": "2.2.1",
+  "scancode_options": {
+    "--copyright": true,
+    "--license": true,
+    "--info": true,
+    "--license-score": 0,
+    "--license-text": true,
+    "--format": "json",
+    "--ignore": [
+      "generated-sources"
+    ]
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "parser/NGCCRuntimeEx.java",
+      "type": "file",
+      "name": "NGCCRuntimeEx.java",
+      "base_name": "NGCCRuntimeEx",
+      "extension": ".java",
+      "date": "2018-02-13",
+      "size": 23004,
+      "sha1": "1aabc14c8979b65ba90c20044b6e877e9741f939",
+      "md5": "bc293a3b8665ea8af92e3aba48bef7b0",
+      "files_count": null,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": [],
+      "licenses": [
+        {
+          "key": "cddl-1.0",
+          "score": 43.84,
+          "short_name": "CDDL 1.0",
+          "category": "Copyleft Limited",
+          "owner": "Oracle Corporation",
+          "homepage_url": "http://www.sun.com/cddl/",
+          "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cddl-1.0",
+          "spdx_license_key": "CDDL-1.0",
+          "spdx_url": "https://spdx.org/licenses/CDDL-1.0",
+          "start_line": 2,
+          "end_line": 35,
+          "matched_rule": {
+            "identifier": "cddl-1.0_or_gpl-2.0-plus_with_classpath-exception-2.0_2.RULE",
+            "license_choice": true,
+            "licenses": [
+              "cddl-1.0",
+              "gpl-2.0-plus",
+              "classpath-exception-2.0"
+            ]
+          },
+          "matched_text": "DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.\n *\n * [Copyright] ([c]) [1997]-[2017] [Oracle] [and]/[or] [its] [affiliates]. [All] [rights] [reserved].\n *\n * The contents of this file are subject to the terms of either the GNU\n * General Public License Version 2 only (\"GPL\") or the Common Development\n * and Distribution License(\"CDDL\") (collectively, the \"License\").  You\n * may not use this file except in compliance with the License.  You can\n * obtain a copy of the License at\n * https://[oss].[oracle].[com]/[licenses]/CDDL+GPL-[1].[1]\n * [or] LICENSE.txt.  See the License for the specific\n * language governing permissions and limitations under the License.\n *\n * When distributing the software, include this License Header Notice in each\n * file and include the License file at [LICENSE].[txt].\n *\n * GPL [Classpath] [Exception]:\n * [Oracle] [designates] [this] [particular] [file] [as] [subject] [to] [the] \"[Classpath]\"\n * [exception] [as] [provided] [by] [Oracle] [in] the GPL Version 2 [section] [of] [the] [License]\n * [file] [that] [accompanied] [this] [code].\n *\n * [Modifications]:\n * [If] [applicable], [add] [the] [following] [below] [the] [License] [Header], [with] [the] [fields]\n * [enclosed] [by] [brackets] [] [replaced] [by] [your] [own] [identifying] [information]:\n * \"[Portions] [Copyright] [[year]] [[name] [of] [copyright] [owner]]\"\n *\n * [Contributor]([s]):\n * [If] [you] [wish] [your] [version] [of] [this] [file] [to] [be] [governed] [by] [only] the CDDL or\n * [only] [the] GPL Version 2, [indicate] [your] [decision] [by] [adding] \"[[Contributor]]\n * [elects] [to] [include] [this] [software] [in] [this] [distribution] [under] the [CDDL [or] GPL\n * Version 2] [license].\"  [If] [you] [don]'[t] [indicate] [a] [single] [choice] [of] [license], [a]\n * [recipient] [has] [the] [option] [to] [distribute] [your] [version] [of] [this] [file] [under]\n * [either] [the] [CDDL], [the] GPL Version 2 [or] [to] [extend] [the] [choice] [of] [license] [to]\n * [its] [licensees] [as] [provided] [above].  [However], [if] [you] [add] GPL Version 2"
+        },
+        {
+          "key": "gpl-2.0-plus",
+          "score": 43.84,
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0+",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0",
+          "start_line": 2,
+          "end_line": 35,
+          "matched_rule": {
+            "identifier": "cddl-1.0_or_gpl-2.0-plus_with_classpath-exception-2.0_2.RULE",
+            "license_choice": true,
+            "licenses": [
+              "cddl-1.0",
+              "gpl-2.0-plus",
+              "classpath-exception-2.0"
+            ]
+          },
+          "matched_text": "DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.\n *\n * [Copyright] ([c]) [1997]-[2017] [Oracle] [and]/[or] [its] [affiliates]. [All] [rights] [reserved].\n *\n * The contents of this file are subject to the terms of either the GNU\n * General Public License Version 2 only (\"GPL\") or the Common Development\n * and Distribution License(\"CDDL\") (collectively, the \"License\").  You\n * may not use this file except in compliance with the License.  You can\n * obtain a copy of the License at\n * https://[oss].[oracle].[com]/[licenses]/CDDL+GPL-[1].[1]\n * [or] LICENSE.txt.  See the License for the specific\n * language governing permissions and limitations under the License.\n *\n * When distributing the software, include this License Header Notice in each\n * file and include the License file at [LICENSE].[txt].\n *\n * GPL [Classpath] [Exception]:\n * [Oracle] [designates] [this] [particular] [file] [as] [subject] [to] [the] \"[Classpath]\"\n * [exception] [as] [provided] [by] [Oracle] [in] the GPL Version 2 [section] [of] [the] [License]\n * [file] [that] [accompanied] [this] [code].\n *\n * [Modifications]:\n * [If] [applicable], [add] [the] [following] [below] [the] [License] [Header], [with] [the] [fields]\n * [enclosed] [by] [brackets] [] [replaced] [by] [your] [own] [identifying] [information]:\n * \"[Portions] [Copyright] [[year]] [[name] [of] [copyright] [owner]]\"\n *\n * [Contributor]([s]):\n * [If] [you] [wish] [your] [version] [of] [this] [file] [to] [be] [governed] [by] [only] the CDDL or\n * [only] [the] GPL Version 2, [indicate] [your] [decision] [by] [adding] \"[[Contributor]]\n * [elects] [to] [include] [this] [software] [in] [this] [distribution] [under] the [CDDL [or] GPL\n * Version 2] [license].\"  [If] [you] [don]'[t] [indicate] [a] [single] [choice] [of] [license], [a]\n * [recipient] [has] [the] [option] [to] [distribute] [your] [version] [of] [this] [file] [under]\n * [either] [the] [CDDL], [the] GPL Version 2 [or] [to] [extend] [the] [choice] [of] [license] [to]\n * [its] [licensees] [as] [provided] [above].  [However], [if] [you] [add] GPL Version 2"
+        },
+        {
+          "key": "classpath-exception-2.0",
+          "score": 43.84,
+          "short_name": "Classpath exception 2.0",
+          "category": "Copyleft Limited",
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/software/classpath/",
+          "text_url": "http://www.gnu.org/software/classpath/license.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:classpath-exception-2.0",
+          "spdx_license_key": "Classpath-exception-2.0",
+          "spdx_url": "https://spdx.org/licenses/Classpath-exception-2.0",
+          "start_line": 2,
+          "end_line": 35,
+          "matched_rule": {
+            "identifier": "cddl-1.0_or_gpl-2.0-plus_with_classpath-exception-2.0_2.RULE",
+            "license_choice": true,
+            "licenses": [
+              "cddl-1.0",
+              "gpl-2.0-plus",
+              "classpath-exception-2.0"
+            ]
+          },
+          "matched_text": "DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.\n *\n * [Copyright] ([c]) [1997]-[2017] [Oracle] [and]/[or] [its] [affiliates]. [All] [rights] [reserved].\n *\n * The contents of this file are subject to the terms of either the GNU\n * General Public License Version 2 only (\"GPL\") or the Common Development\n * and Distribution License(\"CDDL\") (collectively, the \"License\").  You\n * may not use this file except in compliance with the License.  You can\n * obtain a copy of the License at\n * https://[oss].[oracle].[com]/[licenses]/CDDL+GPL-[1].[1]\n * [or] LICENSE.txt.  See the License for the specific\n * language governing permissions and limitations under the License.\n *\n * When distributing the software, include this License Header Notice in each\n * file and include the License file at [LICENSE].[txt].\n *\n * GPL [Classpath] [Exception]:\n * [Oracle] [designates] [this] [particular] [file] [as] [subject] [to] [the] \"[Classpath]\"\n * [exception] [as] [provided] [by] [Oracle] [in] the GPL Version 2 [section] [of] [the] [License]\n * [file] [that] [accompanied] [this] [code].\n *\n * [Modifications]:\n * [If] [applicable], [add] [the] [following] [below] [the] [License] [Header], [with] [the] [fields]\n * [enclosed] [by] [brackets] [] [replaced] [by] [your] [own] [identifying] [information]:\n * \"[Portions] [Copyright] [[year]] [[name] [of] [copyright] [owner]]\"\n *\n * [Contributor]([s]):\n * [If] [you] [wish] [your] [version] [of] [this] [file] [to] [be] [governed] [by] [only] the CDDL or\n * [only] [the] GPL Version 2, [indicate] [your] [decision] [by] [adding] \"[[Contributor]]\n * [elects] [to] [include] [this] [software] [in] [this] [distribution] [under] the [CDDL [or] GPL\n * Version 2] [license].\"  [If] [you] [don]'[t] [indicate] [a] [single] [choice] [of] [license], [a]\n * [recipient] [has] [the] [option] [to] [distribute] [your] [version] [of] [this] [file] [under]\n * [either] [the] [CDDL], [the] GPL Version 2 [or] [to] [extend] [the] [choice] [of] [license] [to]\n * [its] [licensees] [as] [provided] [above].  [However], [if] [you] [add] GPL Version 2"
+        },
+        {
+          "key": "cddl-1.0",
+          "score": 100.0,
+          "short_name": "CDDL 1.0",
+          "category": "Copyleft Limited",
+          "owner": "Oracle Corporation",
+          "homepage_url": "http://www.sun.com/cddl/",
+          "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cddl-1.0",
+          "spdx_license_key": "CDDL-1.0",
+          "spdx_url": "https://spdx.org/licenses/CDDL-1.0",
+          "start_line": 34,
+          "end_line": 38,
+          "matched_rule": {
+            "identifier": "cddl-1.0_or_gpl-2.0-glassfish.RULE",
+            "license_choice": false,
+            "licenses": [
+              "cddl-1.0",
+              "gpl-2.0"
+            ]
+          },
+          "matched_text": "or to extend the choice of license to\n * its licensees as provided above.  However, if you add GPL Version 2 code\n * and therefore, elected the GPL Version 2 license, then the option applies\n * only if the new code is made subject to such option by the copyright\n * holder"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0",
+          "start_line": 34,
+          "end_line": 38,
+          "matched_rule": {
+            "identifier": "cddl-1.0_or_gpl-2.0-glassfish.RULE",
+            "license_choice": false,
+            "licenses": [
+              "cddl-1.0",
+              "gpl-2.0"
+            ]
+          },
+          "matched_text": "or to extend the choice of license to\n * its licensees as provided above.  However, if you add GPL Version 2 code\n * and therefore, elected the GPL Version 2 license, then the option applies\n * only if the new code is made subject to such option by the copyright\n * holder"
+        }
+      ],
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright (c) 1997-2017 Oracle and/or its affiliates."
+          ],
+          "holders": [
+            "Oracle and/or its affiliates."
+          ],
+          "authors": [],
+          "start_line": 4,
+          "end_line": 4
+        },
+        {
+          "statements": [],
+          "holders": [],
+          "authors": [
+            "Kohsuke Kawaguchi (kohsuke.kawaguchi@sun.com)"
+          ],
+          "start_line": 74,
+          "end_line": 74
+        }
+      ]
+    }
   ]
-},{"path": "spider/install/jaxws/docs/sgml/figures/serverpath-threeway.ai", "type": "file", "name": "serverpath-threeway.ai", "base_name": "serverpath-threeway", "extension": ".ai", "date": "2017-10-16", "size": 336694, "sha1": "e897f7ca86a3dd288fff4bb98a3bb8f67ba254ff", "md5": "c869e9960ea3d4588b8a55592b9270fc", "files_count": null, "mime_type": "application/pdf", "file_type": "PDF document, version 1.4", "programming_language": "Prolog", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/assertions/WSASOAPBindingSpecAssertions.html", "type": "file", "name": "WSASOAPBindingSpecAssertions.html", "base_name": "WSASOAPBindingSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 42800, "sha1": "8a51ca2509be0f205520be531cf4c164e69cf716", "md5": "3cb0baca85b8457be6056a96a2b9f328", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[{"url": "http://www.w3.org/2005/08/addressing/module", "start_line": 36, "end_line": 36}, {"url": "http://www.w3.org/2005/08/addressing/anonymous", "start_line": 71, "end_line": 71}, {"url": "http://www.w3.org/2005/08/addressing/fault", "start_line": 100, "end_line": 100}]}, {"path": "spider/install/jaxws/docs/assertions/JAXWSSpecAssertions.html", "type": "file", "name": "JAXWSSpecAssertions.html", "base_name": "JAXWSSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 447632, "sha1": "56f8f7d3f914158d4ff336123a07eafbb32c8d0a", "md5": "d7399f9315af53f0d547afcd28fa7b7f", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/assertions/WSACoreSpecAssertions.html", "type": "file", "name": "WSACoreSpecAssertions.html", "base_name": "WSACoreSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 66067, "sha1": "efdf83f9fff6ae3e407ff7e19781476895e7fad9", "md5": "8676f5da38283201e630211641212736", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[{"url": "http://www.w3.org/2005/08/addressing/anonymous", "start_line": 35, "end_line": 35}, {"url": "http://www.w3.org/2005/08/addressing/none", "start_line": 40, "end_line": 40}, {"url": "http://www.w3.org/2005/08/addressing/unspecified", "start_line": 250, "end_line": 250}, {"url": "http://www.w3.org/2005/08/addressing/reply", "start_line": 255, "end_line": 255}]}, {"path": "spider/install/jaxws/docs/assertions/JAXWS23SpecAssertions.html", "type": "file", "name": "JAXWS23SpecAssertions.html", "base_name": "JAXWS23SpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 447632, "sha1": "af5b9e636114a696496d340b71715da4badb7485", "md5": "a71445e6136978ebd7b5b470ba0a261d", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/assertions/AttachmentsSpecAssertions.html", "type": "file", "name": "AttachmentsSpecAssertions.html", "base_name": "AttachmentsSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 40648, "sha1": "d950677571a129cb5384102e8396dcbaffe34c03", "md5": "ea20849bed87e6b2fc5c271cbcedc2ef", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/assertions/WSAMetadataSpecAssertions.html", "type": "file", "name": "WSAMetadataSpecAssertions.html", "base_name": "WSAMetadataSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 56607, "sha1": "25a635740cb166b8385d476492a3f51aa98e0ac1", "md5": "d785e5eaa175bc0bde3a21421bd9c8c7", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[{"url": "http://www.w3.org/2005/08/addressing/anonymous", "start_line": 144, "end_line": 144}, {"url": "http://www.w3.org/2005/08/addressing/none", "start_line": 146, "end_line": 146}, {"url": "http://www.w3.org/2005/08/addressing/reply", "start_line": 550, "end_line": 550}]}, {"path": "spider/install/jaxws/docs/assertions/JAXWSJavadocAssertions.html", "type": "file", "name": "JAXWSJavadocAssertions.html", "base_name": "JAXWSJavadocAssertions", "extension": ".html", "date": "2017-10-16", "size": 206309, "sha1": "8dc9a0a6fd456f6e91a05a707e709b0ca8d2f9d2", "md5": "f4f5f246552a31d1c98a90f7eea32c64", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/assertions/BasicProfileSpecAssertions.html", "type": "file", "name": "BasicProfileSpecAssertions.html", "base_name": "BasicProfileSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 136070, "sha1": "004830e52a047d9d0dba177fb5d7af03810e1e7c", "md5": "eaa8a4afa360202a0655f58b70dd16bc", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[{"url": "http://www.w3.org/XML/1998/namespace", "start_line": 69, "end_line": 69}, {"url": "http://schemas.xmlsoap.org/soap/envelope/", "start_line": 91, "end_line": 91}, {"url": "http://schemas.xmlsoap.org/wsdl/2003-02-11.xsd", "start_line": 389, "end_line": 389}, {"url": "http://schemas.xmlsoap.org/wsdl/soap/2003-02-11.xsd", "start_line": 397, "end_line": 397}, {"url": "http://schemas.xmlsoap.org/soap/http", "start_line": 790, "end_line": 790}]}, {"path": "spider/install/jaxws/docs/assertions/JAXWS23JavadocAssertions.html", "type": "file", "name": "JAXWS23JavadocAssertions.html", "base_name": "JAXWS23JavadocAssertions", "extension": ".html", "date": "2017-10-16", "size": 209597, "sha1": "446f2d4b7d8d784e68052ff29faf92d5f33d81f9", "md5": "066b81e1cecbb1cca17bbaa10315de20", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines, with CRLF line terminators", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[{"url": "http://busgo1208.us.oracle.com/CTS/XMLassertions", "start_line": 1, "end_line": 1}]}, {"path": "spider/install/jaxws/docs/assertions/SOAPSpecAssertions.html", "type": "file", "name": "SOAPSpecAssertions.html", "base_name": "SOAPSpecAssertions", "extension": ".html", "date": "2017-10-16", "size": 14224, "sha1": "7dc6f3d34aee4de2bfcbf2b65f6868a9ae7526b7", "md5": "24ac3896b194b32133fbce4fa41790fa", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[{"url": "http://www.w3.org/XML/1998/namespace", "start_line": 55, "end_line": 55}]}, {"path": "spider/install/jaxws/docs/api/allclasses-frame.html", "type": "file", "name": "allclasses-frame.html", "base_name": "allclasses-frame", "extension": ".html", "date": "2017-10-16", "size": 632, "sha1": "8e79a439c430209af1424f001465c9228c1014f9", "md5": "cea27279c087638efd81c2a10e29982a", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/deprecated-list.html", "type": "file", "name": "deprecated-list.html", "base_name": "deprecated-list", "extension": ".html", "date": "2017-10-16", "size": 3248, "sha1": "c85a7b999d981e5885adaf70f09bcc9f5975d3f1", "md5": "e232e0bd2ea305f42dcbadbc7ccf39c6", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/index.html", "type": "file", "name": "index.html", "base_name": "index", "extension": ".html", "date": "2017-10-16", "size": 706, "sha1": "6cb3c0851c7812ae35254ba6d0236232e538e2a2", "md5": "15cd3db0bb1328272c3ea85f88066eb3", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/help-doc.html", "type": "file", "name": "help-doc.html", "base_name": "help-doc", "extension": ".html", "date": "2017-10-16", "size": 6438, "sha1": "76f521dea93f7b0bf6f4d4d1585f11a24dd477aa", "md5": "6df96968b7e8390fa4e9847e5201f020", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text, with very long lines", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/packages.html", "type": "file", "name": "packages.html", "base_name": "packages", "extension": ".html", "date": "2017-10-16", "size": 666, "sha1": "82d3f2820bebf44a55cd183f9addaf1740e677df", "md5": "ee1d3c11465f2937458a6e214f994dd4", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/stylesheet.css", "type": "file", "name": "stylesheet.css", "base_name": "stylesheet", "extension": ".css", "date": "2017-10-16", "size": 1240, "sha1": "7fc3bb38e8b90fed05cd0440953000c2cc965b44", "md5": "d782e23c2957890f111646b6a33c9a27", "files_count": null, "mime_type": "text/plain", "file_type": "ASCII text", "programming_language": "CSS", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/overview-tree.html", "type": "file", "name": "overview-tree.html", "base_name": "overview-tree", "extension": ".html", "date": "2017-10-16", "size": 3424, "sha1": "537776ae5373b13f2586203a7a697e7a1921d3c8", "md5": "73c7c43c34e208678653691a88db8fa9", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/index-all.html", "type": "file", "name": "index-all.html", "base_name": "index-all", "extension": ".html", "date": "2017-10-16", "size": 4764, "sha1": "ba3ae5aec99f192b71e341084a519ae803a5a019", "md5": "cc44c695a21344e041342830c75c8a25", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/serialized-form.html", "type": "file", "name": "serialized-form.html", "base_name": "serialized-form", "extension": ".html", "date": "2017-10-16", "size": 3292, "sha1": "7991c678df8c2d0a29a42cfa01e5687ca6bfe2e9", "md5": "afcff62c630beb703359f73825480e54", "files_count": null, "mime_type": "text/html", "file_type": "HTML document, ASCII text", "programming_language": "HTML", "is_binary": false, "is_text": true, "is_archive": false, "is_media": false, "is_source": true, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/com", "type": "directory", "name": "com", "base_name": "com", "extension": "", "date": null, "size": 9212, "sha1": null, "md5": null, "files_count": 1, "mime_type": null, "file_type": null, "programming_language": null, "is_binary": false, "is_text": false, "is_archive": false, "is_media": false, "is_source": false, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/com/sun", "type": "directory", "name": "sun", "base_name": "sun", "extension": "", "date": null, "size": 9212, "sha1": null, "md5": null, "files_count": 1, "mime_type": null, "file_type": null, "programming_language": null, "is_binary": false, "is_text": false, "is_archive": false, "is_media": false, "is_source": false, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/com/sun/ts", "type": "directory", "name": "ts", "base_name": "ts", "extension": "", "date": null, "size": 9212, "sha1": null, "md5": null, "files_count": 1, "mime_type": null, "file_type": null, "programming_language": null, "is_binary": false, "is_text": false, "is_archive": false, "is_media": false, "is_source": false, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]}, {"path": "spider/install/jaxws/docs/api/com/sun/ts/lib", "type": "directory", "name": "lib", "base_name": "lib", "extension": "", "date": null, "size": 9212, "sha1": null, "md5": null, "files_count": 1, "mime_type": null, "file_type": null, "programming_language": null, "is_binary": false, "is_text": false, "is_archive": false, "is_media": false, "is_source": false, "is_script": false, "scan_errors":[], "licenses":[], "copyrights":[], "packages":[], "emails":[], "urls":[]
-}
+},
+
+
+
+
+//good
+
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_version": "2.2.1",
+  "scancode_options": {
+    "--copyright": true,
+    "--license": true,
+    "--info": true,
+    "--license-score": 0,
+    "--license-text": true,
+    "--format": "json",
+    "--ignore": [
+      "generated-sources"
+    ]
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "jaxb-ri/licenceheader.txt",
+      "type": "file",
+      "name": "licenceheader.txt",
+      "base_name": "licenceheader",
+      "extension": ".txt",
+      "date": "2018-02-13",
+      "size": 1939,
+      "sha1": "e143d22e443ea42ff723f25e87937702f3c28ae4",
+      "md5": "c1cfafedca8a810c9bb5f0b7f74a0b10",
+      "files_count": null,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": [],
+      "licenses": [
+        {
+          "key": "cddl-1.1",
+          "score": 93.73,
+          "short_name": "CDDL 1.1",
+          "category": "Copyleft Limited",
+          "owner": "Oracle Corporation",
+          "homepage_url": "http://glassfish.java.net/public/CDDL+GPL_1_1.html",
+          "text_url": "http://glassfish.java.net/public/CDDL+GPL_1_1.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cddl-1.1",
+          "spdx_license_key": "CDDL-1.1",
+          "spdx_url": "https://spdx.org/licenses/CDDL-1.1",
+          "start_line": 2,
+          "end_line": 38,
+          "matched_rule": {
+            "identifier": "cddl-1.1_or_gpl-2.0-classpath-glassfish.RULE",
+            "license_choice": false,
+            "licenses": [
+              "cddl-1.1",
+              "gpl-2.0-classpath"
+            ]
+          },
+          "matched_text": "DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.\n *\n * [Copyright] ([c]) [YYYY] [Oracle] [and]/[or] [its] [affiliates]. [All] [rights] [reserved].\n *\n * The contents of this file are subject to the terms of either the GNU\n * General Public License Version 2 only (\"GPL\") or the Common Development\n * and Distribution License(\"CDDL\") (collectively, the \"License\").  You\n * may not use this file except in compliance with the License.  You can\n * obtain a copy of the License at\n * https://[oss].[oracle].[com]/[licenses]/[CDDL+GPL]-[1].[1]\n * [or] LICENSE.txt.  See the License for the specific\n * language governing permissions and limitations under the License.\n *\n * When distributing the software, include this License Header Notice in each\n * file and include the License file at LICENSE.txt.\n *\n * GPL Classpath Exception:\n * Oracle designates this particular file as subject to the \"Classpath\"\n * exception as provided by Oracle in the GPL Version 2 section of the License\n * file that accompanied this code.\n *\n * Modifications:\n * If applicable, add the following below the License Header, with the fields\n * enclosed by brackets [] replaced by your own identifying information:\n * \"Portions Copyright [year] [name of copyright owner]\"\n *\n * Contributor(s):\n * If you wish your version of this file to be governed by only the CDDL or\n * only the GPL Version 2, indicate your decision by adding \"[Contributor]\n * elects to include this software in this distribution under the [CDDL or GPL\n * Version 2] license.\"  If you don't indicate a single choice of license, a\n * recipient has the option to distribute your version of this file under\n * either the CDDL, the GPL Version 2 or to extend the choice of license to\n * its licensees as provided above.  However, if you add GPL Version 2 code\n * and therefore, elected the GPL Version 2 license, then the option applies\n * only if the new code is made subject to such option by the copyright\n * holder"
+        },
+        {
+          "key": "gpl-2.0-classpath",
+          "score": 93.73,
+          "short_name": "GPL 2.0 with classpath exception",
+          "category": "Copyleft Limited",
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/software/classpath/",
+          "text_url": "http://www.gnu.org/software/classpath/license.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-classpath",
+          "spdx_license_key": "GPL-2.0-with-classpath-exception",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-with-classpath-exception",
+          "start_line": 2,
+          "end_line": 38,
+          "matched_rule": {
+            "identifier": "cddl-1.1_or_gpl-2.0-classpath-glassfish.RULE",
+            "license_choice": false,
+            "licenses": [
+              "cddl-1.1",
+              "gpl-2.0-classpath"
+            ]
+          },
+          "matched_text": "DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.\n *\n * [Copyright] ([c]) [YYYY] [Oracle] [and]/[or] [its] [affiliates]. [All] [rights] [reserved].\n *\n * The contents of this file are subject to the terms of either the GNU\n * General Public License Version 2 only (\"GPL\") or the Common Development\n * and Distribution License(\"CDDL\") (collectively, the \"License\").  You\n * may not use this file except in compliance with the License.  You can\n * obtain a copy of the License at\n * https://[oss].[oracle].[com]/[licenses]/[CDDL+GPL]-[1].[1]\n * [or] LICENSE.txt.  See the License for the specific\n * language governing permissions and limitations under the License.\n *\n * When distributing the software, include this License Header Notice in each\n * file and include the License file at LICENSE.txt.\n *\n * GPL Classpath Exception:\n * Oracle designates this particular file as subject to the \"Classpath\"\n * exception as provided by Oracle in the GPL Version 2 section of the License\n * file that accompanied this code.\n *\n * Modifications:\n * If applicable, add the following below the License Header, with the fields\n * enclosed by brackets [] replaced by your own identifying information:\n * \"Portions Copyright [year] [name of copyright owner]\"\n *\n * Contributor(s):\n * If you wish your version of this file to be governed by only the CDDL or\n * only the GPL Version 2, indicate your decision by adding \"[Contributor]\n * elects to include this software in this distribution under the [CDDL or GPL\n * Version 2] license.\"  If you don't indicate a single choice of license, a\n * recipient has the option to distribute your version of this file under\n * either the CDDL, the GPL Version 2 or to extend the choice of license to\n * its licensees as provided above.  However, if you add GPL Version 2 code\n * and therefore, elected the GPL Version 2 license, then the option applies\n * only if the new code is made subject to such option by the copyright\n * holder"
+        }
+      ],
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright (c) YYYY Oracle and/or its affiliates."
+          ],
+          "holders": [
+            "YYYY Oracle and/or its affiliates."
+          ],
+          "authors": [],
+          "start_line": 4,
+          "end_line": 4
+        }
+      ]
+    }
+  ]
+}]

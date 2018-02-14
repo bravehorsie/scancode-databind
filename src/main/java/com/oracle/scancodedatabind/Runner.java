@@ -2,7 +2,9 @@ package com.oracle.scancodedatabind;
 
 import com.oracle.scancodedatabind.pojo.FileEntry;
 import com.oracle.scancodedatabind.pojo.FileLicense;
+import com.oracle.scancodedatabind.pojo.FileLicenseKey;
 import com.oracle.scancodedatabind.pojo.ScancodeResult;
+import org.glassfish.copyright.Copyright;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
@@ -11,20 +13,43 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Runner {
+
+    private static final Logger logger = Logger.getLogger(Runner.class.getName());
 
     private final String jsonFilePath;
 
     private final String outputPath;
 
+    private File copyrightTemplate;
+
+    private String[] ignore;
+
     private final String[] known = new String[] {"GPL 2.0 with classpath exception", "CDDL 1.1"};
+
 
     public Runner(String jsonFilePath, String outputPath) {
         this.jsonFilePath = jsonFilePath;
         this.outputPath = outputPath;
+    }
+
+    public void setCopyrightTemplate(String copyrightTemplatePath) {
+        File cprTemplate = new File(copyrightTemplatePath);
+        if (!cprTemplate.isFile()) {
+            throw new RuntimeException("Template file not found: " + copyrightTemplatePath);
+        }
+        this.copyrightTemplate = cprTemplate;
+    }
+
+    public void setIgnores(String pattern) {
+        this.ignore = pattern.split(",");
     }
 
     public void run() {
@@ -44,13 +69,22 @@ public class Runner {
 
     private void write(ScancodeResult result) {
 
-        List<FileEntry> files = result.getFiles().stream().filter(fileEntry -> fileEntry.getType().equals("file"))
+        List<FileEntry> files = result.getFiles().stream().filter(fileEntry -> fileEntry.getType().equals("file") && !ignoreFile(fileEntry))
                 .collect(Collectors.toList());
 
-
+        //postprocess licenses only get with highest score
+        for (FileEntry file : files) {
+            for (FileLicense license : file.getLicenses()) {
+                FileLicenseKey key = new FileLicenseKey(license);
+                FileLicense existing = file.getHighestScoreLicenses().get(key);
+                if (existing == null || existing.getScore() < license.getScore()) {
+                    file.getHighestScoreLicenses().put(key, license);
+                }
+            }
+        }
 
         List<FileEntry> withLicense = files.stream().filter(fileEntry ->
-                fileEntry.getLicenses().size() > 0)
+                fileEntry.getHighestScoreLicenses().size() > 0)
                 .collect(Collectors.toList());
 
 
@@ -58,17 +92,16 @@ public class Runner {
         List<FileEntry> exceptions = new ArrayList<>();
 
         withLicense.forEach(fileEntry -> {
-            for (FileLicense license : fileEntry.getLicenses()) {
-                if (!license.getShort_name().equals(known[0]) && !license.getShort_name().equals(known[1])) {
-                    exceptions.add(fileEntry);
-                    return;
-                }
+            boolean licenseMatch = checkLicense(fileEntry.getHighestScoreLicenses().values());
+            if (licenseMatch || checkLicenseHeader(fileEntry)) {
+                knownLicnses.add(fileEntry);
+            } else {
+                exceptions.add(fileEntry);
             }
-            knownLicnses.add(fileEntry);
         });
 
         List<FileEntry> withoutLicense = files.stream().filter(fileEntry ->
-                fileEntry.getLicenses() == null || fileEntry.getLicenses().size() == 0)
+                fileEntry.getHighestScoreLicenses() == null || fileEntry.getHighestScoreLicenses().size() == 0)
                 .collect(Collectors.toList());
 
         System.out.println("Entries with known license: " + knownLicnses.size());
@@ -81,6 +114,43 @@ public class Runner {
 
     }
 
+    private boolean checkLicense(Collection<FileLicense> licenses) {
+        for (FileLicense license : licenses) {
+            if (!license.getShort_name().equals(known[0]) && !license.getShort_name().equals(known[1])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean checkLicenseHeader(FileEntry fileEntry) {
+        if (copyrightTemplate == null) {
+            return false;
+        }
+        File f = new File(fileEntry.getPath());
+        Copyright c = new Copyright();
+        c.debug = true;
+        c.correctTemplate = copyrightTemplate;
+        c.ignoreYear = true;
+
+        try {
+            c.check(f);
+            return c.errors == 0;
+        } catch (IOException e) {
+            logger.severe("Can't check: "+f.getPath());
+            return false;
+        }
+    }
+
+    private boolean ignoreFile(FileEntry fileEntry) {
+        for (String pattern : ignore) {
+            if (fileEntry.getPath().contains(pattern)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void printCsv(List<FileEntry> entries, String fileName) {
         File output = new File(fileName);
         try (FileWriter outWriter = new FileWriter(output)) {
@@ -88,7 +158,7 @@ public class Runner {
                 List<String> values = new ArrayList<>();
                 values.add("File: " + fileEntry.getPath());
 
-                fileEntry.getLicenses().forEach((fileLicense -> {
+                fileEntry.getHighestScoreLicenses().values().forEach((fileLicense -> {
                     values.add("License: " + fileLicense.getShort_name());
                     values.add("Owner: " + fileLicense.getOwner());
                     values.add("Url: " + fileLicense.getUrl());
