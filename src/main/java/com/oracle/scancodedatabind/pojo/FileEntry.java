@@ -1,6 +1,7 @@
 package com.oracle.scancodedatabind.pojo;
 
 import javax.json.bind.annotation.JsonbProperty;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +18,8 @@ public class FileEntry {
 
     private String type;
 
+    private String extension;
+
     @JsonbProperty("file_type")
     private String mimeType;
 
@@ -26,13 +29,13 @@ public class FileEntry {
 
     private Map<FileLicenseKey, FileLicense> highestScoreLicenses = new HashMap<>();
 
-    private Set<FileCopyright> copyrights = new HashSet<>();
+    private List<FileCopyright> copyrights = new ArrayList<>();
 
-    public Set<FileCopyright> getCopyrights() {
+    public List<FileCopyright> getCopyrights() {
         return copyrights;
     }
 
-    public void setCopyrights(Set<FileCopyright> copyrights) {
+    public void setCopyrights(List<FileCopyright> copyrights) {
         this.copyrights = copyrights;
     }
 
@@ -82,5 +85,13 @@ public class FileEntry {
 
     public void setLicenses(List<FileLicense> licenses) {
         this.licenses = licenses;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
     }
 }

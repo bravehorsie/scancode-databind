@@ -1,5 +1,6 @@
 package com.oracle.scancodedatabind;
 
+import com.oracle.scancodedatabind.pojo.FileCopyright;
 import com.oracle.scancodedatabind.pojo.FileEntry;
 import com.oracle.scancodedatabind.pojo.FileLicense;
 import com.oracle.scancodedatabind.pojo.FileLicenseKey;
@@ -30,9 +31,13 @@ public class Runner {
 
     private File copyrightTemplate;
 
-    private String[] ignore;
+    private String[] ignore = new String[]{};
 
     private final String[] known = new String[] {"GPL 2.0 with classpath exception", "CDDL 1.1"};
+
+    private final String knownCopyrightHolder = "Oracle and/or its affiliates.";
+
+    private boolean generateHtml = true;
 
 
     public Runner(String jsonFilePath, String outputPath) {
@@ -93,7 +98,7 @@ public class Runner {
 
         withLicense.forEach(fileEntry -> {
             boolean licenseMatch = checkLicense(fileEntry.getHighestScoreLicenses().values());
-            if (licenseMatch || checkLicenseHeader(fileEntry)) {
+            if (licenseMatch || (knownCopyrightHolder(fileEntry) && checkLicenseHeader(fileEntry))) {
                 knownLicnses.add(fileEntry);
             } else {
                 exceptions.add(fileEntry);
@@ -111,7 +116,23 @@ public class Runner {
         printCsv(knownLicnses, outputPath + "-known-license.csv");
         printCsv(exceptions, outputPath + "-exception-license.csv");
         printCsv(withoutLicense, outputPath + "-without-license.csv");
+        printHtml(exceptions);
+    }
 
+    private boolean knownCopyrightHolder(FileEntry fileEntry) {
+        for (FileCopyright copyright : fileEntry.getCopyrights()) {
+            for (String holder : copyright.getHolders()) {
+                if (!knownCopyrightHolder.equals(holder)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void printHtml(Collection<FileEntry> entries) {
+        ConfluenceHtmlPrinter confluenceHtmlPrinter = new ConfluenceHtmlPrinter(entries, outputPath);
+        confluenceHtmlPrinter.printHtml();
     }
 
     private boolean checkLicense(Collection<FileLicense> licenses) {
@@ -129,7 +150,6 @@ public class Runner {
         }
         File f = new File(fileEntry.getPath());
         Copyright c = new Copyright();
-        c.debug = true;
         c.correctTemplate = copyrightTemplate;
         c.ignoreYear = true;
 
