@@ -16,6 +16,7 @@ public class Main {
     public static final String OUTPUT = "outputFile";
     public static final String LICENSE = "license";
     public static final String IGNORE = "ignore";
+    public static final String STRIP_PATH = "stripPath";
 
 
     public static void main(String[] args) throws IOException {
@@ -26,6 +27,7 @@ public class Main {
         options.addOption(OUTPUT, true, "Path to output file.");
         options.addOption(LICENSE, true, "Path to file containing license which will be used to check files wiht \"EXCEPTION\" license.");
         options.addOption(IGNORE, true, "Ignore files containing pattern. Patterns are separated by ','.");
+        options.addOption(STRIP_PATH, true, "Path to strip from sources path in the output. Typically start of the full project path such as /home/user/java/projects/tango.");
 
 
 
@@ -52,6 +54,9 @@ public class Main {
         }
         if (line.hasOption(IGNORE)) {
             runner.setIgnores(line.getOptionValue(IGNORE));
+        }
+        if (line.hasOption(STRIP_PATH)) {
+            runner.setStripPath(line.getOptionValue(STRIP_PATH));
         }
         runner.run();
     }

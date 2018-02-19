@@ -16,8 +16,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -39,10 +37,16 @@ public class Runner {
 
     private boolean generateHtml = true;
 
+    private String stripPath;
+
 
     public Runner(String jsonFilePath, String outputPath) {
         this.jsonFilePath = jsonFilePath;
         this.outputPath = outputPath;
+    }
+
+    public void setStripPath(String stripPath) {
+        this.stripPath = stripPath;
     }
 
     public void setCopyrightTemplate(String copyrightTemplatePath) {
@@ -116,7 +120,8 @@ public class Runner {
         printCsv(knownLicnses, outputPath + "-known-license.csv");
         printCsv(exceptions, outputPath + "-exception-license.csv");
         printCsv(withoutLicense, outputPath + "-without-license.csv");
-        printHtml(exceptions);
+        printHtml(exceptions, "-exceptions.html");
+        printHtml(withLicense, "-no-license.html");
     }
 
     private boolean knownCopyrightHolder(FileEntry fileEntry) {
@@ -130,8 +135,8 @@ public class Runner {
         return true;
     }
 
-    private void printHtml(Collection<FileEntry> entries) {
-        ConfluenceHtmlPrinter confluenceHtmlPrinter = new ConfluenceHtmlPrinter(entries, outputPath);
+    private void printHtml(Collection<FileEntry> entries, String suffix) {
+        ConfluenceHtmlPrinter confluenceHtmlPrinter = new ConfluenceHtmlPrinter(entries, outputPath+ "-"+suffix, stripPath);
         confluenceHtmlPrinter.printHtml();
     }
 
@@ -176,7 +181,10 @@ public class Runner {
         try (FileWriter outWriter = new FileWriter(output)) {
             entries.forEach((fileEntry -> {
                 List<String> values = new ArrayList<>();
-                values.add("File: " + fileEntry.getPath());
+                String filePath = stripPath != null ?
+                        fileEntry.getPath().replace(stripPath, "")
+                        :fileEntry.getPath();
+                values.add("File: " + filePath);
 
                 fileEntry.getHighestScoreLicenses().values().forEach((fileLicense -> {
                     values.add("License: " + fileLicense.getShort_name());

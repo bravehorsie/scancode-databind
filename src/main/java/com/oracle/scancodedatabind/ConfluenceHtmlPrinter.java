@@ -20,8 +20,11 @@ public class ConfluenceHtmlPrinter {
 
     private String outputFilePath;
 
-    public ConfluenceHtmlPrinter(Collection<FileEntry> entries, String output) {
-        this.outputFilePath = output + "-confluence-table.html";
+    private String stripPath;
+
+    public ConfluenceHtmlPrinter(Collection<FileEntry> entries, String output, String stripPath) {
+        this.outputFilePath = output;
+        this.stripPath = stripPath;
         for (FileEntry fileEntry : entries) {
             Map<LicenseGroupKey, List<FileEntry>> fileLicenseKeyListMap = files.computeIfAbsent(fileEntry.getExtension(), k -> new HashMap<>());
             //TODO getCopyrights().get(0) is incorrect, but this is how current table is composed on wikis
@@ -71,18 +74,18 @@ public class ConfluenceHtmlPrinter {
                 List<FileEntry> files = licensesEntry.getValue();
                 if (inSpan == 0) {
                     inSpan = fileEntry.getValue().entrySet().size();
-                    sb.append("<td rowspan=\"" + inSpan + "\">" + countEntryFileSize(fileEntry.getValue()) + "</td>\n");
-                    sb.append("<td rowspan=\"" + inSpan + "\">" + fileEntry.getKey() + "</td>\n");
+                    sb.append("<td rowspan=\"").append(inSpan).append("\">").append(countEntryFileSize(fileEntry.getValue())).append("</td>\n");
+                    sb.append("<td rowspan=\"").append(inSpan).append("\">").append(fileEntry.getKey()).append("</td>\n");
                     inSpan--;
                 } else {
                     inSpan--;
                 }
 
-                sb.append("<td rowspan=\"1\">"+getCopyright(licensesEntry.getKey().getFileLicenseList().get(0).getFileCopyright())+"</td>\n");
+                sb.append("<td rowspan=\"1\">").append(getCopyright(licensesEntry.getKey().getFileLicenseList().get(0).getFileCopyright())).append("</td>\n");
                 //print licenses
                 sb.append("<td rowspan=\"1\"><ol>\n");
                 for (LicenseWithCopyright license : licensesEntry.getKey().getFileLicenseList()) {
-                    sb.append("<li>" + license.getFileLicense().getShort_name() + "</li>\n");
+                    sb.append("<li>").append(license.getFileLicense().getShort_name()).append("</li>\n");
                 }
                 sb.append("</ol></td>\n");
                 sb.append("<td rowspan=\"1\">");
@@ -93,8 +96,10 @@ public class ConfluenceHtmlPrinter {
                         "        <ac:parameter ac:name=\"collapse\">"+(files.size() > 8) +"</ac:parameter>\n" +
                         "        <ac:plain-text-body><![CDATA[");
                 for (FileEntry file : files) {
-                    //TODO remove absolute path with param
-                    sb.append(file.getPath().replace("/home/roma/dev/java/metro/", "") + "\n");
+                    String replace = stripPath != null ?
+                            file.getPath().replace(stripPath, "")
+                            :file.getPath();
+                    sb.append(replace).append("\n");
                 }
                 sb.append("      ]]></ac:plain-text-body>\n" +
                         "      </ac:structured-macro>\n");
