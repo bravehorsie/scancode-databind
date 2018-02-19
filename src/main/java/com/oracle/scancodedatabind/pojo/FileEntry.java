@@ -25,7 +25,7 @@ public class FileEntry {
 
     private Boolean binary;
 
-    private List<FileLicense> licenses;
+    private List<FileLicense> licenses = new ArrayList<>();
 
     private Map<FileLicenseKey, FileLicense> highestScoreLicenses = new HashMap<>();
 
