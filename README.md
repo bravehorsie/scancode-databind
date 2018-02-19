@@ -4,14 +4,12 @@ Transform output of scancode tool into csv files.
 
 ```mvn clean install```
 
-```java -jar target/scancode-databind-1.0-SNAPSHOT-jar-with-dependencies.jar ~/path/to/jsoninput.json ~/path/to/outputfile```
+```java -jar target/scancode-databind-1.0-SNAPSHOT-jar-with-dependencies.jar -jsonFile /home/roma/dev/java/istack-scan.json -outputFile /home/roma/dev/java/istack -license /home/roma/dev/java/istack-copyright.txt```
 
 Output will actually be files with suffixes -known-license.csv, -unknown-license.csv and -without-license.csv
 
-You have to run scancode with -i option if you want to exclude directories from the output files.
-
-For example:
+You have to run scancode with following options:
 
 ```
-./scancode -i -l --format json ~/path/to/project ~/path/to/scancode_result.json
+./scancode -c -l -i --full-root --license-text -f json --ignore generated-sources ~/path/to/oroject/ ~/path/to/scan.json
 ```
