@@ -121,7 +121,7 @@ public class Runner {
         printCsv(exceptions, outputPath + "-exception-license.csv");
         printCsv(withoutLicense, outputPath + "-without-license.csv");
         printHtml(exceptions, "-exceptions.html");
-        printHtml(withLicense, "-no-license.html");
+        printHtml(withoutLicense, "-no-license.html");
     }
 
     private boolean knownCopyrightHolder(FileEntry fileEntry) {

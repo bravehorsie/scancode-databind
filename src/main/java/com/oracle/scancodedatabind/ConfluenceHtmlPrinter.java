@@ -81,7 +81,10 @@ public class ConfluenceHtmlPrinter {
                     inSpan--;
                 }
 
-                sb.append("<td rowspan=\"1\">").append(getCopyright(licensesEntry.getKey().getFileLicenseList().get(0).getFileCopyright())).append("</td>\n");
+                    String copyright = licensesEntry.getKey().getFileLicenseList().size() > 0 ?
+                            getCopyright(licensesEntry.getKey().getFileLicenseList().get(0).getFileCopyright())
+                            : "N/A";
+                sb.append("<td rowspan=\"1\">").append(copyright).append("</td>\n");
                 //print licenses
                 sb.append("<td rowspan=\"1\"><ol>\n");
                 for (LicenseWithCopyright license : licensesEntry.getKey().getFileLicenseList()) {
